@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* ── Wegoup Brand Color System (Tailwind v4 @theme) ────────── */
+@theme {
+  /* Primary — Navy Blue */
+  --color-primary-50:  #F7F9FC;
+  --color-primary-100: #EEF4FF;
+  --color-primary-600: #4B8AF5;
+  --color-primary-700: #1865F2;
+  --color-primary-800: #1B3A5C;
+  --color-primary-900: #0C2340;
+
+  /* Accent */
+  --color-accent-green:        #1FAF54;
+  --color-accent-green-light:  #E6F7ED;
+  --color-accent-gold:         #FFB100;
+  --color-accent-red:          #D92916;
+  --color-accent-purple:       #7854F7;
+  --color-accent-teal:         #0FBFAD;
+
+  /* Domain areas */
+  --color-grammar:    #1865F2;
+  --color-vocabulary: #7854F7;
+  --color-reading:    #0FBFAD;
+  --color-writing:    #E35C20;
+
+  /* Neutral overrides */
+  --color-gray-50:  #F7F8F9;
+  --color-gray-100: #F0F1F3;
+  --color-gray-200: #E4E6EA;
+  --color-gray-300: #CBD0D8;
+  --color-gray-400: #9AA1AE;
+  --color-gray-500: #6B7280;
+  --color-gray-600: #4B5563;
+  --color-gray-700: #374151;
+  --color-gray-900: #21242C;
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+:root {
+  --background: #ffffff;
+  --foreground: #21242C;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    'Pretendard Variable', Pretendard,
+    -apple-system, BlinkMacSystemFont,
+    'Apple SD Gothic Neo', 'Noto Sans KR',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
