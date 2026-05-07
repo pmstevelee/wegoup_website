@@ -190,7 +190,7 @@ export default function ReviewsPage() {
           <h2 className="text-3xl font-bold text-primary-900 mb-4">우리 학원도 시작해보세요</h2>
           <p className="text-gray-600 mb-8">14일 무료 체험 · 카드 등록 없음 · 설치 5분</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="https://app.wegupenglish.com/register/owner" className="bg-primary-700 text-white font-bold px-8 py-4 rounded-xl text-lg hover:bg-primary-800 transition-colors">
+            <Link href="https://login.wegoupenglish.com" className="bg-primary-700 text-white font-bold px-8 py-4 rounded-xl text-lg hover:bg-primary-800 transition-colors">
               14일 무료 체험 시작
             </Link>
             <Link href="/contact" className="border border-primary-700 text-primary-700 font-bold px-8 py-4 rounded-xl text-lg hover:bg-primary-50 transition-colors">

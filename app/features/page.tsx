@@ -207,7 +207,7 @@ export default function FeaturesPage() {
           <p className="text-gray-600 mb-8">14일 무료 체험 · 카드 등록 없음 · 언제든 해지</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="https://app.wegupenglish.com/register/owner"
+              href="https://login.wegoupenglish.com"
               className="bg-primary-700 text-white font-bold px-8 py-4 rounded-xl text-lg hover:bg-primary-800 transition-colors"
             >
               14일 무료 체험 시작

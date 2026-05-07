@@ -40,7 +40,7 @@ const PLANS = [
     ],
     locked: ['학부모 알림톡'],
     cta: '무료로 시작하기',
-    ctaHref: 'https://app.wegupenglish.com/register/owner',
+    ctaHref: 'https://login.wegoupenglish.com',
     ctaStyle: 'border border-gray-300 text-gray-700 hover:bg-gray-50',
   },
   {
@@ -70,7 +70,7 @@ const PLANS = [
       { text: '스토리지 10GB / 데이터 1년 보관' },
     ],
     cta: '14일 무료 체험',
-    ctaHref: 'https://app.wegupenglish.com/register/owner',
+    ctaHref: 'https://login.wegoupenglish.com',
     ctaStyle: 'border border-gray-300 text-gray-700 hover:bg-gray-50',
   },
   {
@@ -102,7 +102,7 @@ const PLANS = [
       { text: '스토리지 50GB / 데이터 3년 보관' },
     ],
     cta: '14일 무료 체험',
-    ctaHref: 'https://app.wegupenglish.com/register/owner',
+    ctaHref: 'https://login.wegoupenglish.com',
     ctaStyle: 'bg-primary-700 text-white hover:bg-primary-800',
   },
   {
@@ -341,7 +341,7 @@ export default function PricingPage() {
           <h2 className="text-3xl font-bold text-primary-900 mb-4">지금 바로 시작하세요</h2>
           <p className="text-gray-600 mb-8">카드 등록 없이 14일 무료 체험. 언제든 플랜을 변경할 수 있습니다.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="https://app.wegupenglish.com/register/owner" className="bg-primary-700 text-white font-bold px-8 py-4 rounded-xl text-lg hover:bg-primary-800 transition-colors">
+            <Link href="https://login.wegoupenglish.com" className="bg-primary-700 text-white font-bold px-8 py-4 rounded-xl text-lg hover:bg-primary-800 transition-colors">
               14일 무료 체험 시작
             </Link>
             <Link href="/contact" className="border border-primary-700 text-primary-700 font-bold px-8 py-4 rounded-xl text-lg hover:bg-primary-50 transition-colors">

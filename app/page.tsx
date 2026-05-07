@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
 }
 
-const APP_URL = 'https://app.wegupenglish.com'
+const APP_URL = 'https://login.wegoupenglish.com'
 
 const FEATURES = [
   {
@@ -114,7 +114,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
               <a
-                href={`${APP_URL}/register/owner`}
+                href={`${APP_URL}`}
                 className="bg-primary-700 text-white px-8 py-4 rounded-xl text-lg font-bold shadow-sm hover:bg-primary-800 transition-all hover:-translate-y-0.5"
               >
                 14일 무료 체험 시작
@@ -354,7 +354,7 @@ export default function Home() {
                   badge: null,
                   features: ['학생 최대 10명', '기본 레벨 테스트', '문제 뱅크 100문항', '교사 계정 1개', '기본 성적 리포트'],
                   cta: '무료 시작',
-                  href: `${APP_URL}/register/owner`,
+                  href: `${APP_URL}`,
                 },
                 {
                   name: 'Standard',
@@ -363,7 +363,7 @@ export default function Home() {
                   badge: '가장 인기',
                   features: ['학생 최대 50명', '레벨·단원 테스트 무제한', '전체 문제 뱅크 450+', 'AI 쓰기 평가 월 200회', '고급 분석 대시보드'],
                   cta: '14일 무료 체험',
-                  href: `${APP_URL}/register/owner`,
+                  href: `${APP_URL}`,
                 },
                 {
                   name: 'Premium',
@@ -463,7 +463,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <a
-                href={`${APP_URL}/register/owner`}
+                href={`${APP_URL}`}
                 className="bg-primary-700 text-white px-10 py-4 rounded-xl text-lg font-bold hover:bg-primary-800 transition-all hover:-translate-y-0.5 shadow-sm"
               >
                 14일 무료 체험 시작

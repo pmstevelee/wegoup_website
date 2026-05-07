@@ -102,7 +102,7 @@ export default function ContactPage() {
                   카드 등록 없이 5분 안에 시작할 수 있습니다.
                 </p>
                 <a
-                  href="https://app.wegupenglish.com/register/owner"
+                  href="https://login.wegoupenglish.com"
                   className="block text-center bg-primary-700 text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-800 transition-colors"
                 >
                   무료 체험 시작하기

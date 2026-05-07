@@ -50,13 +50,13 @@ export default function LandingNav() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <Link
-              href="/login"
+              href="https://login.wegoupenglish.com"
               className="text-sm font-medium text-gray-600 hover:text-primary-700 transition-colors px-4 py-2"
             >
               로그인
             </Link>
             <Link
-              href="/register/owner"
+              href="https://login.wegoupenglish.com"
               className="bg-primary-700 text-white text-sm font-bold px-5 py-2.5 rounded-lg hover:bg-primary-800 transition-colors"
             >
               무료 시작하기
@@ -94,14 +94,14 @@ export default function LandingNav() {
             ))}
             <hr className="my-2 border-gray-100" />
             <Link
-              href="/login"
+              href="https://login.wegoupenglish.com"
               className="text-sm font-medium text-gray-600 px-2 py-3"
               onClick={() => setMenuOpen(false)}
             >
               로그인
             </Link>
             <Link
-              href="/register/owner"
+              href="https://login.wegoupenglish.com"
               className="bg-primary-700 text-white text-sm font-bold px-5 py-3 rounded-lg text-center mt-1 hover:bg-primary-800 transition-colors"
               onClick={() => setMenuOpen(false)}
             >

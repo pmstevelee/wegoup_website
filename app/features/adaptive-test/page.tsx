@@ -195,7 +195,7 @@ export default function AdaptiveTestPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
-                    href="https://app.wegupenglish.com/register/owner"
+                    href="https://login.wegoupenglish.com"
                     className="inline-flex items-center justify-center gap-2 bg-primary-700 text-white font-bold px-7 py-3.5 rounded-xl text-base hover:bg-primary-800 transition-colors"
                   >
                     14일 무료 체험 시작
@@ -701,7 +701,7 @@ export default function AdaptiveTestPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="https://app.wegupenglish.com/register/owner"
+                href="https://login.wegoupenglish.com"
                 className="inline-flex items-center justify-center gap-2 bg-primary-700 text-white font-bold px-8 py-4 rounded-xl text-base hover:bg-primary-600 transition-colors"
               >
                 14일 무료 체험 시작

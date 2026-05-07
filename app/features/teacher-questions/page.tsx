@@ -174,7 +174,7 @@ export default function TeacherQuestionsPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
-                    href="https://app.wegupenglish.com/register/owner"
+                    href="https://login.wegoupenglish.com"
                     className="inline-flex items-center justify-center gap-2 text-white font-bold px-7 py-3.5 rounded-xl text-base transition-colors"
                     style={{ background: '#0FBFAD' }}
                   >
@@ -610,7 +610,7 @@ export default function TeacherQuestionsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="https://app.wegupenglish.com/register/owner"
+                href="https://login.wegoupenglish.com"
                 className="inline-flex items-center justify-center gap-2 font-bold px-8 py-4 rounded-xl text-base transition-colors text-white"
                 style={{ background: '#0FBFAD' }}
               >
