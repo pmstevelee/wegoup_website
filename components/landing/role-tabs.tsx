@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 const TABS = [
   {
@@ -15,7 +16,8 @@ const TABS = [
       'PDF 리포트 1클릭 생성',
       '정기 레벨 테스트 자동 스케줄링',
     ],
-    mockupLabel: '학원장 분석 대시보드',
+    mockupLabel: '학원장 대시보드',
+    image: '/images/screenshot-role-owner.png',
   },
   {
     id: 'teacher',
@@ -30,6 +32,7 @@ const TABS = [
       '레벨 조정 및 이력 관리',
     ],
     mockupLabel: '교사 학생 관리 화면',
+    image: '/images/screenshot-role-teacher.png',
   },
   {
     id: 'student',
@@ -44,6 +47,7 @@ const TABS = [
       '쓰기 AI 즉시 피드백',
     ],
     mockupLabel: '학생 홈 미션 카드',
+    image: '/images/screenshot-role-student.png',
   },
 ]
 
@@ -53,6 +57,7 @@ export default function RoleTabs() {
 
   return (
     <div>
+      {/* Tab buttons */}
       <div className="flex gap-2 justify-center mb-12 flex-wrap">
         {TABS.map((t) => (
           <button
@@ -69,6 +74,7 @@ export default function RoleTabs() {
         ))}
       </div>
 
+      {/* Tab content */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
         <div>
           <h3 className="text-2xl font-bold text-gray-900 mb-2">{tab.title}</h3>
@@ -91,7 +97,7 @@ export default function RoleTabs() {
           </ul>
           <div className="mt-8">
             <a
-              href="https://app.wegupenglish.com/register/owner"
+              href="/register/owner"
               className="inline-flex items-center gap-2 text-primary-700 text-sm font-semibold hover:underline"
             >
               무료로 시작하기 →
@@ -99,17 +105,36 @@ export default function RoleTabs() {
           </div>
         </div>
 
-        <div className="bg-gray-100 rounded-2xl aspect-[4/3] flex items-center justify-center border border-gray-200">
-          <div className="text-center text-gray-400 p-8">
-            <div className="w-12 h-12 bg-gray-200 rounded-xl mx-auto mb-3 flex items-center justify-center">
-              <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <div className="text-sm font-medium text-gray-500">스크린샷 영역</div>
-            <div className="text-xs text-gray-400 mt-1">{tab.mockupLabel}</div>
+        {/* Mockup */}
+        {tab.image ? (
+          <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm aspect-[4/3] relative">
+            <Image
+              src={tab.image}
+              alt={tab.mockupLabel}
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
-        </div>
+        ) : (
+          <div className="bg-gray-50 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center border border-gray-200 gap-4 overflow-hidden p-8">
+            <div className="flex gap-2">
+              {['#1865F2', '#7854F7', '#0FBFAD', '#E35C20', '#E91E8A'].map((c) => (
+                <div key={c} className="w-2 h-2 rounded-full" style={{ background: c }} />
+              ))}
+            </div>
+            <div className="grid grid-cols-3 gap-2 w-full max-w-xs">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="rounded-lg h-12 animate-pulse"
+                  style={{ background: 'rgba(0,0,0,0.07)', animationDelay: `${i * 0.12}s` }}
+                />
+              ))}
+            </div>
+            <div className="text-xs text-gray-400">{tab.mockupLabel}</div>
+          </div>
+        )}
       </div>
     </div>
   )

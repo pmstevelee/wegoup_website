@@ -15,9 +15,7 @@ export default function LandingFooter() {
             </p>
             <div className="flex gap-2">
               <a
-                href="https://open.kakao.com/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 aria-label="카카오톡"
                 className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors text-xs font-bold"
               >
@@ -92,8 +90,15 @@ export default function LandingFooter() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 text-center text-sm text-white/40">
-          © 2026 위고업잉글리시. All rights reserved.
+        <div className="border-t border-white/10 pt-8">
+          <div className="text-xs text-white/40 leading-relaxed mb-4 space-y-1">
+            <p>와이앤지크리에이티브 ｜ 대표 이선용 ｜ 사업자등록번호 206-19-73665 ｜ 통신판매업신고 제2014-경기안양-00277</p>
+            <p>경기도 안양시 동안구 시민대로 361, 1410(관양동, 에이스 평촌타워)</p>
+            <p>TEL 02-2244-0391 ｜ MAIL hello@wegoupenglish.com</p>
+          </div>
+          <div className="text-center text-sm text-white/40">
+            © 2026 위고업잉글리시. All rights reserved.
+          </div>
         </div>
       </div>
     </footer>

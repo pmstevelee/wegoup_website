@@ -17,7 +17,9 @@ export default function Counter({ target, suffix = '', prefix = '', duration = 2
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !started) setStarted(true)
+        if (entry.isIntersecting && !started) {
+          setStarted(true)
+        }
       },
       { threshold: 0.5 }
     )
@@ -45,7 +47,9 @@ export default function Counter({ target, suffix = '', prefix = '', duration = 2
 
   return (
     <span ref={ref}>
-      {prefix}{count}{suffix}
+      {prefix}
+      {count}
+      {suffix}
     </span>
   )
 }

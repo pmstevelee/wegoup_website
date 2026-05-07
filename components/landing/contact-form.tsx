@@ -23,6 +23,7 @@ export default function ContactForm() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setState('sending')
+    // 실제 제출 로직 연동 전 임시 처리
     await new Promise((r) => setTimeout(r, 1200))
     setState('sent')
   }
@@ -38,10 +39,7 @@ export default function ContactForm() {
           빠른 상담을 원하시면 카카오톡으로 문의해 주세요.
         </p>
         <button
-          onClick={() => {
-            setState('idle')
-            setForm({ name: '', academy: '', email: '', phone: '', students: '', message: '' })
-          }}
+          onClick={() => { setState('idle'); setForm({ name: '', academy: '', email: '', phone: '', students: '', message: '' }) }}
           className="mt-6 text-sm text-primary-700 hover:underline"
         >
           새 문의 작성하기
@@ -55,7 +53,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1.5">
-            담당자 성함 <span className="text-red-500">*</span>
+            담당자 성함 <span className="text-accent-red">*</span>
           </label>
           <input
             type="text"
@@ -69,7 +67,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1.5">
-            학원명 <span className="text-red-500">*</span>
+            학원명 <span className="text-accent-red">*</span>
           </label>
           <input
             type="text"
@@ -83,7 +81,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1.5">
-            이메일 <span className="text-red-500">*</span>
+            이메일 <span className="text-accent-red">*</span>
           </label>
           <input
             type="email"
@@ -127,7 +125,7 @@ export default function ContactForm() {
 
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1.5">
-          문의 내용 <span className="text-red-500">*</span>
+          문의 내용 <span className="text-accent-red">*</span>
         </label>
         <textarea
           name="message"
@@ -141,7 +139,12 @@ export default function ContactForm() {
       </div>
 
       <div className="flex items-start gap-3">
-        <input type="checkbox" id="privacy" required className="mt-1 rounded" />
+        <input
+          type="checkbox"
+          id="privacy"
+          required
+          className="mt-1 rounded"
+        />
         <label htmlFor="privacy" className="text-xs text-gray-500 leading-relaxed">
           개인정보 수집 및 이용에 동의합니다. 수집된 정보는 도입 상담 목적으로만 사용되며,
           상담 완료 후 1년 이내 삭제됩니다.{' '}
@@ -158,7 +161,7 @@ export default function ContactForm() {
       </button>
 
       {state === 'error' && (
-        <p className="text-sm text-red-500 text-center">
+        <p className="text-sm text-accent-red text-center">
           전송에 실패했습니다. 잠시 후 다시 시도해 주세요.
         </p>
       )}
