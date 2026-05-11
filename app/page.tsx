@@ -82,15 +82,15 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 border border-primary-200 text-primary-700 text-xs font-semibold px-4 py-2 rounded-full mb-8 bg-primary-50">
               14일 무료 체험 진행 중
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+            <h1 className="text-5xl md:text-[3.75rem] font-bold text-gray-900 leading-tight mb-6">
               영어학원의{' '}
               <span style={{ color: '#1865F2' }}>새로운 기준</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-4 leading-relaxed">
+            <p className="text-2xl text-gray-600 max-w-2xl mx-auto mb-4 leading-relaxed">
               AI가 학생 데이터를 정밀 분석하고,{' '}
               <strong className="text-gray-800">선생님이 올바른 교육 방향을 제시합니다.</strong>
             </p>
-            <p className="text-base text-gray-500 max-w-xl mx-auto mb-6 leading-relaxed">
+            <p className="text-lg text-gray-500 max-w-xl mx-auto mb-6 leading-relaxed">
               부족한 부분은 AI가 반복 제시하고, 선생님이 직접 문제를 만들어 학습시킵니다.
               <br />
               데이터에 근거한 효율적인 교육으로 학생 실력을 실질적으로 향상시킵니다.
@@ -140,12 +140,12 @@ export default function Home() {
               <p className="text-sm font-semibold mb-4" style={{ color: '#0FBFAD' }}>
                 AI가 보조하고, 선생님은 교육에만 집중할 수 있습니다.
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 모든 것을 AI에 맡기지 않습니다.{' '}
                 <br />
                 <span style={{ color: '#FFB100' }}>AI가 분석하고, 선생님은 교육에만 집중하세요.</span>
               </h2>
-              <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+              <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
                 생성된 학습 데이터를 AI가 정밀하게 분석하여 학생의 부족한 부분을 반복 제시합니다.
                 선생님은 데이터를 바탕으로 올바른 교육 방향을 제시하고 직접 문제를 만들어 학습시킵니다.
               </p>
@@ -179,8 +179,8 @@ export default function Home() {
                     >
                       {item.step}
                     </div>
-                    <h3 className="text-white font-bold text-lg mb-2">{item.title}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                    <h3 className="text-white font-bold text-xl mb-2">{item.title}</h3>
+                    <p className="text-gray-400 text-base leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -192,10 +192,10 @@ export default function Home() {
         <section className="bg-white py-24 px-6">
           <div className="max-w-6xl mx-auto">
             <ScrollReveal>
-              <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-4">
                 왜 위고업잉글리시인가요?
               </h2>
-              <p className="text-gray-500 text-center mb-16 max-w-xl mx-auto">
+              <p className="text-lg text-gray-500 text-center mb-16 max-w-xl mx-auto">
                 영어학원이 진짜 필요한 것에만 집중했습니다.
               </p>
             </ScrollReveal>
@@ -241,8 +241,8 @@ export default function Home() {
                     >
                       {card.label}
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">{card.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{card.desc}</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{card.title}</h3>
+                    <p className="text-base text-gray-600 leading-relaxed">{card.desc}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -254,10 +254,10 @@ export default function Home() {
         <section className="bg-gray-50 py-24 px-6">
           <div className="max-w-6xl mx-auto">
             <ScrollReveal>
-              <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-4">
                 모두를 위한 솔루션
               </h2>
-              <p className="text-gray-500 text-center mb-16 max-w-xl mx-auto">
+              <p className="text-lg text-gray-500 text-center mb-16 max-w-xl mx-auto">
                 학원장, 교사, 학생 모두의 경험을 최적화했습니다.
               </p>
             </ScrollReveal>
@@ -269,10 +269,10 @@ export default function Home() {
         <section className="bg-white py-24 px-6">
           <div className="max-w-6xl mx-auto">
             <ScrollReveal>
-              <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-4">
                 주요 기능
               </h2>
-              <p className="text-gray-500 text-center mb-20 max-w-xl mx-auto">
+              <p className="text-lg text-gray-500 text-center mb-20 max-w-xl mx-auto">
                 학원 운영에 꼭 필요한 기능만 담았습니다.
               </p>
             </ScrollReveal>
@@ -287,10 +287,10 @@ export default function Home() {
                       >
                         {f.num}
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{f.title}</h3>
-                      <p className="font-semibold text-sm mb-4" style={{ color: f.color }}>{f.subtitle}</p>
-                      <p className="text-gray-600 leading-relaxed">{f.desc}</p>
-                      <Link href={f.detailHref} className="inline-flex items-center gap-1 text-sm font-semibold mt-5 hover:underline" style={{ color: f.color }}>
+                      <h3 className="text-3xl font-bold text-gray-900 mb-2">{f.title}</h3>
+                      <p className="font-semibold text-base mb-4" style={{ color: f.color }}>{f.subtitle}</p>
+                      <p className="text-lg text-gray-600 leading-relaxed">{f.desc}</p>
+                      <Link href={f.detailHref} className="inline-flex items-center gap-1 text-base font-semibold mt-5 hover:underline" style={{ color: f.color }}>
                         자세히 보기 →
                       </Link>
                     </div>
@@ -325,10 +325,10 @@ export default function Home() {
               { target: 60, suffix: '%', label: '교사 행정 업무 절감', color: '#FFB100' },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="text-4xl md:text-5xl font-bold mb-2" style={{ color: stat.color }}>
+                <div className="text-5xl md:text-6xl font-bold mb-2" style={{ color: stat.color }}>
                   <Counter target={stat.target} suffix={stat.suffix} />
                 </div>
-                <div className="text-sm text-white/60">{stat.label}</div>
+                <div className="text-base text-white/60">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -338,10 +338,10 @@ export default function Home() {
         <section className="bg-white py-24 px-6">
           <div className="max-w-5xl mx-auto">
             <ScrollReveal>
-              <h2 className="text-3xl font-bold text-gray-900 text-center mb-2">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-2">
                 합리적인 요금, 무료로 시작하세요
               </h2>
-              <p className="text-gray-500 text-center mb-16">
+              <p className="text-lg text-gray-500 text-center mb-16">
                 학생당 월 1,663원부터. 모든 플랜 14일 무료 체험.
               </p>
             </ScrollReveal>
@@ -388,21 +388,18 @@ export default function Home() {
                         </span>
                       </div>
                     )}
-                    <div className="text-sm text-gray-500 mb-1">{plan.name}</div>
-                    <div className="text-xl font-bold text-gray-900 mb-4">{plan.price}</div>
+                    <div className="text-base text-gray-500 mb-1">{plan.name}</div>
+                    <div className="text-2xl font-bold text-gray-900 mb-4">{plan.price}</div>
                     <ul className="space-y-2.5 flex-1 mb-6">
                       {plan.features.map((f) => (
-                        <li key={f} className="flex items-center gap-2 text-sm text-gray-700">
-                          <span className="w-4 h-4 rounded-full bg-accent-green flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">
-                            ✓
-                          </span>
+                        <li key={f} className="text-base text-gray-700">
                           {f}
                         </li>
                       ))}
                     </ul>
                     <a
                       href={plan.href}
-                      className={`block text-center text-sm font-bold py-3 rounded-xl transition-colors ${
+                      className={`block text-center text-base font-bold py-3 rounded-xl transition-colors ${
                         plan.highlight
                           ? 'bg-primary-700 text-white hover:bg-primary-800'
                           : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
@@ -415,7 +412,7 @@ export default function Home() {
               ))}
             </div>
             <ScrollReveal>
-              <p className="text-center text-sm text-gray-500">
+              <p className="text-center text-base text-gray-500">
                 더 자세한 비교가 필요하신가요?{' '}
                 <Link href="/pricing" className="text-primary-700 font-semibold hover:underline">
                   전체 요금제 비교 →
@@ -429,17 +426,17 @@ export default function Home() {
         <section className="bg-gray-50 py-24 px-6">
           <div className="max-w-5xl mx-auto">
             <ScrollReveal>
-              <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-4">
                 학원 현장의 목소리
               </h2>
-              <p className="text-gray-500 text-center mb-12">
+              <p className="text-lg text-gray-500 text-center mb-12">
                 전국 50+ 학원이 선택한 이유를 들어보세요.
               </p>
             </ScrollReveal>
             <ReviewsCarousel />
             <ScrollReveal>
               <p className="text-center mt-8">
-                <Link href="/reviews" className="text-primary-700 text-sm font-semibold hover:underline">
+                <Link href="/reviews" className="text-primary-700 text-base font-semibold hover:underline">
                   더 많은 도입 사례 보기 →
                 </Link>
               </p>
@@ -450,15 +447,10 @@ export default function Home() {
         {/* ── Section 9: 최종 CTA ──────────────────────────── */}
         <section className="bg-white py-24 px-6 text-center border-t border-gray-100">
           <ScrollReveal>
-            <div className="flex justify-center gap-2 mb-8">
-              {['#1865F2', '#7854F7', '#0FBFAD', '#E35C20', '#E91E8A'].map((c) => (
-                <div key={c} className="w-3 h-3 rounded-full" style={{ background: c }} />
-              ))}
-            </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 mt-4">
               지금 바로 <span style={{ color: '#1865F2' }}>시작</span>하세요
             </h2>
-            <p className="text-lg text-gray-600 mb-10 max-w-lg mx-auto">
+            <p className="text-xl text-gray-600 mb-10 max-w-lg mx-auto">
               카드 등록 없이 14일 무료 체험. 모든 기능을 사용해보세요.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
