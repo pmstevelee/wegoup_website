@@ -56,7 +56,7 @@ export default function LandingNav() {
               로그인
             </Link>
             <Link
-              href="/register/owner"
+              href="https://login.wegoupenglish.com"
               className="bg-primary-700 text-white text-base font-bold px-5 py-2.5 rounded-lg hover:bg-primary-800 transition-colors"
             >
               무료 시작하기
@@ -95,7 +95,7 @@ export default function LandingNav() {
               로그인
             </Link>
             <Link
-              href="/register/owner"
+              href="https://login.wegoupenglish.com"
               className="bg-primary-700 text-white text-base font-bold px-5 py-3 rounded-lg text-center mt-1 hover:bg-primary-800 transition-colors"
               onClick={() => setMenuOpen(false)}
             >
