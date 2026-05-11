@@ -50,7 +50,7 @@ export default function LandingNav() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <Link
-              href="/login"
+              href="https://login.wegoupenglish.com"
               className="text-base font-medium text-gray-600 hover:text-primary-700 transition-colors px-4 py-2"
             >
               로그인
@@ -88,7 +88,7 @@ export default function LandingNav() {
             ))}
             <hr className="my-2 border-gray-100" />
             <Link
-              href="/login"
+              href="https://login.wegoupenglish.com"
               className="text-base font-medium text-gray-600 px-2 py-3"
               onClick={() => setMenuOpen(false)}
             >
