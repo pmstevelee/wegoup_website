@@ -88,7 +88,7 @@ export default function RoleTabs() {
           </ul>
           <div className="mt-8">
             <a
-              href="/register/owner"
+              href="https://login.wegoupenglish.com"
               className="inline-flex items-center gap-2 text-primary-700 text-base font-semibold hover:underline"
             >
               무료로 시작하기 →
