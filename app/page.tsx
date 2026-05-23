@@ -342,40 +342,89 @@ export default function Home() {
                 합리적인 요금, 무료로 시작하세요
               </h2>
               <p className="text-lg text-gray-500 text-center mb-16">
-                학생당 월 1,663원부터. 모든 플랜 14일 무료 체험.
+                소형 공부방부터 대형 학원까지. 모든 플랜 14일 무료 체험.
               </p>
             </ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
               {[
                 {
-                  name: 'Free',
-                  price: '무료 14일',
+                  tier: 'FREE',
+                  name: '무료 체험',
+                  subtitle: '1인 공부방 · 도입 검토',
+                  price: '14일 무료',
+                  priceSub: '카드 등록 없음',
                   highlight: false,
                   badge: null,
-                  features: ['학생 최대 10명', '기본 레벨 테스트', '문제 뱅크 100문항', '교사 계정 1개', '기본 성적 리포트'],
-                  cta: '무료 시작',
+                  badgeColor: '',
+                  features: [
+                    '학생 최대 10명 / 교사 1개',
+                    '레벨 테스트 (재시험 불가)',
+                    '자작 문제뱅크 100문항',
+                    '기본 PDF 리포트 (월 5회)',
+                    '게임화/XP/스트릭 기본',
+                  ],
+                  cta: '무료로 시작하기',
                   href: `${APP_URL}`,
                 },
                 {
-                  name: 'Standard',
-                  price: '월 49,900원',
-                  highlight: true,
-                  badge: '가장 인기',
-                  features: ['학생 최대 50명', '레벨·단원 테스트 무제한', '전체 문제 뱅크 450+', 'AI 쓰기 평가 월 200회', '고급 분석 대시보드'],
+                  tier: 'STARTER',
+                  name: '스타터',
+                  subtitle: '소형 교습소 (10~20명)',
+                  price: '19,900원',
+                  priceSub: '학생당 월 1,990원',
+                  highlight: false,
+                  badge: '신규 권장',
+                  badgeColor: 'bg-emerald-500',
+                  features: [
+                    '학생 최대 20명 / 교사 2개',
+                    '적응형 레벨 테스트 무제한',
+                    'AI 쓰기 평가 월 50회',
+                    'AI 문제 생성 월 30회',
+                    '학부모 알림톡 월 100건',
+                  ],
                   cta: '14일 무료 체험',
                   href: `${APP_URL}`,
                 },
                 {
-                  name: 'Premium',
-                  price: '월 129,000원',
+                  tier: 'STANDARD',
+                  name: '스탠다드',
+                  subtitle: '중형 영어학원 (30~50명)',
+                  price: '49,900원',
+                  priceSub: '학생당 월 1,663원',
+                  highlight: true,
+                  badge: '가장 인기',
+                  badgeColor: 'bg-primary-700',
+                  features: [
+                    '학생 최대 50명 / 교사 5개',
+                    '레벨 테스트 무제한 + 자동 스케줄',
+                    'AI 쓰기 평가 월 200회',
+                    'AI 유사 문제 생성 (오답 기반)',
+                    '고급 분석 대시보드',
+                  ],
+                  cta: '14일 무료 체험',
+                  href: `${APP_URL}`,
+                },
+                {
+                  tier: 'PREMIUM',
+                  name: '프리미엄',
+                  subtitle: '대형 학원 · 다지점 (50명+)',
+                  price: '129,000원',
+                  priceSub: '학생당 월 1,290원',
                   highlight: false,
                   badge: null,
-                  features: ['학생 무제한', 'AI 쓰기·문제 무제한', '교사 계정 무제한', '전담 CS 매니저', 'SLA 99.9% 보장'],
-                  cta: '도입 상담',
+                  badgeColor: '',
+                  features: [
+                    '학생 무제한 / 교사 무제한',
+                    'AI 쓰기 월 1,000회 · 문제 500회',
+                    '다지점/분원 통합 관리',
+                    '화이트라벨 (학원 자체 브랜드)',
+                    '전담 CS · SLA 99.9%',
+                  ],
+                  cta: '도입 상담 받기',
                   href: '/contact',
                 },
               ].map((plan, i) => (
-                <ScrollReveal key={plan.name} delay={i * 100}>
+                <ScrollReveal key={plan.tier} delay={i * 100}>
                   <div
                     className={`rounded-2xl border p-6 flex flex-col h-full relative ${
                       plan.highlight ? 'border-primary-700 ring-1 ring-primary-700' : 'border-gray-200'
@@ -383,23 +432,30 @@ export default function Home() {
                   >
                     {plan.badge && (
                       <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                        <span className="bg-primary-700 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        <span className={`${plan.badgeColor} text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap`}>
                           {plan.badge}
                         </span>
                       </div>
                     )}
-                    <div className="text-base text-gray-500 mb-1">{plan.name}</div>
-                    <div className="text-2xl font-bold text-gray-900 mb-4">{plan.price}</div>
+                    <div className="text-xs font-semibold text-gray-400 tracking-widest mb-1">{plan.tier}</div>
+                    <div className="text-xl font-bold text-gray-900 mb-0.5">{plan.name}</div>
+                    <div className="text-xs text-gray-400 mb-4">{plan.subtitle}</div>
+                    <div className="mb-1">
+                      <span className="text-2xl font-bold text-gray-900">{plan.price}</span>
+                      {plan.price !== '14일 무료' && <span className="text-sm text-gray-500 ml-1">월 / 학원</span>}
+                    </div>
+                    <div className="text-xs text-primary-700 font-semibold mb-4">{plan.priceSub}</div>
                     <ul className="space-y-2.5 flex-1 mb-6">
                       {plan.features.map((f) => (
-                        <li key={f} className="text-base text-gray-700">
+                        <li key={f} className="flex items-start gap-2 text-sm text-gray-700">
+                          <span className="text-emerald-500 mt-0.5 shrink-0">✓</span>
                           {f}
                         </li>
                       ))}
                     </ul>
                     <a
                       href={plan.href}
-                      className={`block text-center text-base font-bold py-3 rounded-xl transition-colors ${
+                      className={`block text-center text-sm font-bold py-3 rounded-xl transition-colors ${
                         plan.highlight
                           ? 'bg-primary-700 text-white hover:bg-primary-800'
                           : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
