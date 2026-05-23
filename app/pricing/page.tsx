@@ -217,12 +217,6 @@ export default function PricingPage() {
                             {f.text}
                           </li>
                         ))}
-                        {'locked' in plan && plan.locked?.map((f) => (
-                          <li key={f} className="flex items-start gap-2 text-sm text-gray-400 leading-relaxed">
-                            <span className="text-gray-300 font-bold flex-shrink-0 leading-5">✗</span>
-                            {f}
-                          </li>
-                        ))}
                       </ul>
 
                       <Link
