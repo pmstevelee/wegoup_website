@@ -1,45 +1,42 @@
 @import "tailwindcss";
 
-/* ── Wegoup Brand Color System (Tailwind v4 @theme) ────────── */
+/* ── 브랜드 색상 (참고: epop.ai) ───────────────────────────── */
 @theme {
-  /* Primary — Navy Blue */
-  --color-primary-50:  #F7F9FC;
-  --color-primary-100: #EEF4FF;
-  --color-primary-600: #4B8AF5;
-  --color-primary-700: #1865F2;
-  --color-primary-800: #1B3A5C;
-  --color-primary-900: #0C2340;
+  /* Primary — 보라 */
+  --color-primary-50:  #F6F2FF;
+  --color-primary-100: #EFE9FF;
+  --color-primary-200: #DBD0FC;
+  --color-primary-600: #8150E8;
+  --color-primary-700: #6D36D5;
+  --color-primary-800: #572CB4;
+  --color-primary-900: #232323;
 
-  /* Accent */
-  --color-accent-green:        #1FAF54;
-  --color-accent-green-light:  #E6F7ED;
-  --color-accent-gold:         #FFB100;
-  --color-accent-red:          #D92916;
-  --color-accent-purple:       #7854F7;
-  --color-accent-teal:         #0FBFAD;
+  /* 파스텔 포인트 */
+  --color-sky:        #9DD8FF;
+  --color-sky-light:  #EAF6FF;
+  --color-peach:      #FFAC5A;
+  --color-peach-light:#FFF1E4;
+  --color-sun:        #FFCF5F;
+  --color-sun-light:  #FFF7E0;
 
-  /* Domain areas */
-  --color-grammar:    #1865F2;
-  --color-vocabulary: #7854F7;
-  --color-reading:    #0FBFAD;
-  --color-writing:    #E35C20;
+  --color-accent-green: #1FAF54;
+  --color-accent-red:   #D92916;
 
-  /* Neutral overrides */
-  --color-gray-50:  #F7F8F9;
-  --color-gray-100: #F0F1F3;
-  --color-gray-200: #E4E6EA;
-  --color-gray-300: #CBD0D8;
-  --color-gray-400: #9AA1AE;
-  --color-gray-500: #6B7280;
-  --color-gray-600: #4B5563;
-  --color-gray-700: #374151;
-  --color-gray-900: #21242C;
+  /* 회색 */
+  --color-gray-50:  #FAFAFA;
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #EBEBEB;
+  --color-gray-300: #D6D6D6;
+  --color-gray-400: #A0A0A0;
+  --color-gray-500: #757575;
+  --color-gray-600: #5A5A5A;
+  --color-gray-700: #4E4E4E;
+  --color-gray-900: #232323;
 }
 
-/* ── Base ──────────────────────────────────────────────────── */
 :root {
   --background: #ffffff;
-  --foreground: #21242C;
+  --foreground: #232323;
 }
 
 body {
@@ -51,4 +48,5 @@ body {
     'Apple SD Gothic Neo', 'Noto Sans KR',
     sans-serif;
   -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
 }

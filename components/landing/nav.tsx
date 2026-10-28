@@ -2,14 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-
-const NAV_LINKS = [
-  { href: '/features', label: '기능소개' },
-  { href: '/pricing', label: '요금제' },
-  { href: '/reviews', label: '도입사례' },
-  { href: '/faq', label: 'FAQ' },
-  { href: '/contact', label: '문의하기' },
-]
+import { APP_URL, NAV, SITE } from '@/content/copy'
 
 export default function LandingNav() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -23,84 +16,75 @@ export default function LandingNav() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-shadow duration-200 ${
-        scrolled ? 'shadow-sm' : ''
+      className={`sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b transition-colors duration-200 ${
+        scrolled ? 'border-gray-200' : 'border-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-5">
         <div className="h-16 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="text-xl font-bold text-primary-900 tracking-tight">
-            위고업잉글리시
+          <Link href="/" className="text-xl font-extrabold text-primary-700 tracking-tight">
+            {SITE.name}
           </Link>
 
-          {/* Desktop nav links */}
-          <div className="hidden md:flex items-center gap-8">
-            {NAV_LINKS.map(({ href, label }) => (
+          <div className="hidden md:flex items-center gap-9">
+            {NAV.links.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className="text-base font-medium text-gray-600 hover:text-primary-700 transition-colors"
+                className="text-[15px] font-medium text-gray-600 hover:text-gray-900 transition-colors"
               >
                 {label}
               </Link>
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link
-              href="https://login.wegoupenglish.com"
-              className="text-base font-medium text-gray-600 hover:text-primary-700 transition-colors px-4 py-2"
+          <div className="hidden md:flex items-center gap-2">
+            <a
+              href={APP_URL}
+              className="text-[15px] font-medium text-gray-600 hover:text-gray-900 transition-colors px-4 py-2"
             >
-              로그인
-            </Link>
-            <Link
-              href="https://login.wegoupenglish.com"
-              className="bg-primary-700 text-white text-base font-bold px-5 py-2.5 rounded-lg hover:bg-primary-800 transition-colors"
+              {NAV.login}
+            </a>
+            <a
+              href={APP_URL}
+              className="bg-primary-700 text-white text-[15px] font-bold px-5 py-2.5 rounded-full hover:bg-primary-800 transition-colors"
             >
-              무료 시작하기
-            </Link>
+              {NAV.cta}
+            </a>
           </div>
 
-          {/* Mobile menu toggle */}
           <button
-            className="md:hidden px-3 py-2 rounded-lg text-base font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+            className="md:hidden px-3 py-2 rounded-lg text-base font-semibold text-gray-700 hover:bg-gray-100 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="메뉴"
+            aria-expanded={menuOpen}
           >
             {menuOpen ? '닫기' : '메뉴'}
           </button>
         </div>
 
-        {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden border-t border-gray-100 py-4 flex flex-col gap-1 animate-in slide-in-from-top-2 duration-200">
-            {NAV_LINKS.map(({ href, label }) => (
+          <div className="md:hidden border-t border-gray-100 py-4 flex flex-col gap-1">
+            {NAV.links.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className="text-base font-medium text-gray-600 px-2 py-3 hover:text-primary-700 transition-colors rounded-lg"
+                className="text-base font-medium text-gray-700 px-2 py-3 rounded-lg hover:bg-gray-50"
                 onClick={() => setMenuOpen(false)}
               >
                 {label}
               </Link>
             ))}
             <hr className="my-2 border-gray-100" />
-            <Link
-              href="https://login.wegoupenglish.com"
-              className="text-base font-medium text-gray-600 px-2 py-3"
-              onClick={() => setMenuOpen(false)}
+            <a href={APP_URL} className="text-base font-medium text-gray-700 px-2 py-3">
+              {NAV.login}
+            </a>
+            <a
+              href={APP_URL}
+              className="bg-primary-700 text-white text-base font-bold px-5 py-3 rounded-full text-center mt-1 hover:bg-primary-800 transition-colors"
             >
-              로그인
-            </Link>
-            <Link
-              href="https://login.wegoupenglish.com"
-              className="bg-primary-700 text-white text-base font-bold px-5 py-3 rounded-lg text-center mt-1 hover:bg-primary-800 transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              무료 시작하기
-            </Link>
+              {NAV.cta}
+            </a>
           </div>
         )}
       </div>

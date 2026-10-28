@@ -1,61 +1,35 @@
 'use client'
 
 import { useState } from 'react'
-import ScrollReveal from './scroll-reveal'
 
 interface FaqItem {
   q: string
   a: string
 }
 
-interface FaqGroup {
-  category: string
-  items: FaqItem[]
-}
-
-interface FaqAccordionProps {
-  groups: FaqGroup[]
-}
-
 function AccordionItem({ q, a }: FaqItem) {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="border border-gray-200 rounded-xl overflow-hidden">
+    <div className="bg-gray-100 rounded-[20px] overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-start justify-between gap-4 px-6 py-4 text-left hover:bg-gray-50 transition-colors"
+        aria-expanded={open}
+        className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
       >
-        <span className="font-semibold text-gray-900 text-lg leading-relaxed">{q}</span>
-        <span className="text-2xl font-light text-gray-400 flex-shrink-0 leading-none mt-0.5">
-          {open ? '−' : '+'}
-        </span>
+        <span className="font-bold text-gray-900 text-lg">{q}</span>
+        <span className="text-2xl font-light text-gray-400 shrink-0 leading-none">{open ? '−' : '+'}</span>
       </button>
-      {open && (
-        <div className="px-6 pb-5 text-base text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
-          {a}
-        </div>
-      )}
+      {open && <div className="px-6 pb-6 text-base text-gray-600 leading-relaxed">{a}</div>}
     </div>
   )
 }
 
-export default function FaqAccordion({ groups }: FaqAccordionProps) {
+export default function FaqAccordion({ items }: { items: FaqItem[] }) {
   return (
-    <div className="space-y-10">
-      {groups.map((group, gi) => (
-        <ScrollReveal key={group.category} delay={gi * 60}>
-          <div>
-            <h2 className="text-base font-semibold text-primary-700 uppercase tracking-wider mb-4">
-              {group.category}
-            </h2>
-            <div className="space-y-3">
-              {group.items.map((item) => (
-                <AccordionItem key={item.q} q={item.q} a={item.a} />
-              ))}
-            </div>
-          </div>
-        </ScrollReveal>
+    <div className="space-y-3">
+      {items.map((item) => (
+        <AccordionItem key={item.q} q={item.q} a={item.a} />
       ))}
     </div>
   )
