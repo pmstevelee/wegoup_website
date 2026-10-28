@@ -1,321 +1,137 @@
 import type { Metadata } from 'next'
-import ScrollReveal from '@/components/landing/scroll-reveal'
-import Link from 'next/link'
 import LandingNav from '@/components/landing/nav'
 import LandingFooter from '@/components/landing/footer'
+import ScrollReveal from '@/components/landing/scroll-reveal'
+import CtaButton from '@/components/landing/cta-button'
+import { PRICING } from '@/content/copy'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: '요금제',
-  description: 'Free부터 Premium까지. 학원 규모에 맞는 요금제를 선택하세요. 14일 무료 체험.',
+  title: PRICING.metaTitle,
+  description: PRICING.metaDescription,
 }
-
-
-const PLANS = [
-  {
-    name: 'Free',
-    nameKo: '무료 체험',
-    target: '도입 검토 중인 학원, 1인 공부방',
-    price: null,
-    priceDesc: '14일 무료',
-    priceNote: '카드 등록 없음',
-    highlight: false,
-    badge: null,
-    features: [
-      { text: '학생 최대 10명 / 교사 1개' },
-      { text: '레벨 테스트 학생당 1회 (재시험 불가)' },
-      { text: '자작 문제뱅크 최대 100문항' },
-      { text: '공용 문제뱅크 읽기 전용 (450+ 문항)' },
-      { text: '단원 테스트 월 3회' },
-      { text: 'AI 쓰기 평가 월 5회 맛보기' },
-      { text: 'AI 문제 생성 월 3회 맛보기' },
-      { text: 'AI 플래시카드 월 30단어 맛보기' },
-      { text: '스토리지 1GB / 데이터 30일 보관' },
-    ],
-    cta: '무료로 시작하기',
-    ctaHref: 'https://login.wegoupenglish.com',
-    ctaStyle: 'border border-gray-300 text-gray-700 hover:bg-gray-50',
-  },
-  {
-    name: 'Starter',
-    nameKo: '스타터',
-    target: '1인 공부방, 소형 교습소 (10~20명)',
-    price: 19900,
-    priceUnit: '월 / 학원',
-    priceDesc: '학생 10명 기준',
-    priceNote: '학생당 월 1,990원',
-    highlight: false,
-    badge: '신규 권장',
-    badgeColor: 'bg-accent-green',
-    features: [
-      { text: '학생 최대 20명 / 교사 2개' },
-      { text: '적응형 레벨 테스트 무제한' },
-      { text: '자작 문제뱅크 무제한' },
-      { text: '공용 문제뱅크 읽기 전용 (16000+ 문항)' },
-      { text: '단원 테스트 무제한' },
-      { text: 'AI 쓰기 평가 월 50회 (초과 1회당 60원)' },
-      { text: 'AI 문제 생성 월 30회 (초과 1회당 100원)' },
-      { text: 'AI 플래시카드 월 300단어 (초과 시 단어당 5크레딧)' },
-      { text: '스토리지 10GB / 데이터 1년 보관' },
-    ],
-    cta: '14일 무료 체험',
-    ctaHref: 'https://login.wegoupenglish.com',
-    ctaStyle: 'border border-gray-300 text-gray-700 hover:bg-gray-50',
-  },
-  {
-    name: 'Standard',
-    nameKo: '스탠다드',
-    target: '중형 영어학원 (30~50명)',
-    price: 49900,
-    priceUnit: '월 / 학원',
-    priceDesc: '학생 30명 기준',
-    priceNote: '학생당 월 1,663원',
-    highlight: true,
-    badge: '가장 인기',
-    badgeColor: 'bg-primary-700',
-    features: [
-      { text: '학생 최대 50명 / 교사 5개' },
-      { text: '레벨 테스트 무제한' },
-      { text: '자작 문제뱅크 무제한' },
-      { text: '공용 문제뱅크 전체 사용' },
-      { text: '단원 테스트 무제한' },
-      { text: 'AI 쓰기 평가 월 200회 (초과 1회당 50원)' },
-      { text: 'AI 문제 생성 월 100회 (초과 1회당 80원)' },
-      { text: 'AI 플래시카드 월 1,000단어 (초과 시 단어당 5크레딧)' },
-      { text: '스토리지 50GB / 데이터 3년 보관' },
-    ],
-    cta: '14일 무료 체험',
-    ctaHref: 'https://login.wegoupenglish.com',
-    ctaStyle: 'bg-primary-700 text-white hover:bg-primary-800',
-  },
-  {
-    name: 'Premium',
-    nameKo: '프리미엄',
-    target: '대형 학원, 다지점, 프랜차이즈 (50명+)',
-    price: 129000,
-    priceUnit: '월 / 학원',
-    priceDesc: '학생 100명 기준',
-    priceNote: '학생당 월 1,290원',
-    highlight: false,
-    badge: null,
-    features: [
-      { text: '학생 무제한 / 교사 무제한' },
-      { text: 'Standard 모든 기능 포함' },
-      { text: 'AI 쓰기 평가 월 1,000회 ' },
-      { text: 'AI 문제 생성 월 500회 ' },
-      { text: 'AI 플래시카드 월 5,000단어' },
-      { text: '다지점/분원 통합 관리 대시보드' },
-      { text: '학부모 알림톡 월 2,000건' },
-      { text: '우선 기능 요청권 + 신기능 베타 참여' },
-      { text: 'AI 초과 사용 별도 협의 (대량 할인)' },
-      { text: '스토리지 500GB / 데이터 무제한 보관' },
-    ],
-    cta: '도입 상담 받기',
-    ctaHref: '/contact',
-    ctaStyle: 'border border-primary-700 text-primary-700 hover:bg-primary-50',
-  },
-]
-
-const FAQ_ITEMS = [
-  {
-    q: '무료 체험 기간에는 어떤 기능을 쓸 수 있나요?',
-    a: '14일 무료 체험 기간 동안 Free 플랜의 모든 기능을 사용하실 수 있습니다. 체험 기간 종료 후 자동으로 요금이 청구되지 않으며, 직접 구독을 시작하셔야 합니다.',
-  },
-  {
-    q: 'AI 쓰기 평가·문제 생성 한도를 초과하면 어떻게 되나요?',
-    a: '초과 사용분은 건당 소액 과금됩니다. Starter는 쓰기 60원/문제 100원, Standard는 쓰기 50원/문제 80원입니다. 크레딧 패키지를 미리 충전해두면 초과 비용을 예측 가능하게 관리할 수 있습니다.',
-  },
-  {
-    q: '결제는 어떻게 이루어지나요?',
-    a: '현재 수동 입금 확인 방식으로 운영됩니다. 구독 신청 후 관리자 확인을 거쳐 서비스가 활성화됩니다. 카드 자동 결제는 추후 지원 예정입니다.',
-  },
-  {
-    q: '학생 수가 플랜 한도를 초과하면 어떻게 되나요?',
-    a: '한도 초과 시 추가 학생을 등록할 수 없고, 알림을 드립니다. 상위 플랜으로 업그레이드하거나 도입 상담을 통해 맞춤 요금제를 이용하실 수 있습니다.',
-  },
-]
-
-const COMPARE_ROWS: [string, string, string, string, string][] = [
-  ['학생 수',          '최대 10명',    '최대 20명',    '최대 50명',    '무제한'],
-  ['교사 계정',        '1개',          '2개',          '5개',          '무제한'],
-  ['레벨 테스트',      '학생당 1회',      '무제한',         '무제한',        '무제한'],
-  ['자작 문제뱅크',    '100문항',      '무제한',       '무제한',       '무제한'],
-  ['공용 문제뱅크',     '✓',           '✓',            '✓',            '✓'],
-  ['단원 테스트',      '월 3회',       '무제한',         '무제한',         '무제한'],
-  ['AI 쓰기 평가',     '월 5회',       '월 50회',      '월 200회',     '월 1,000회'],
-  ['AI 문제 생성',     '월 3회',       '월 30회',      '월 100회',     '월 500회'],
-  ['AI 플래시카드',    '월 30단어',    '월 300단어',   '월 1,000단어', '월 5,000단어'],
-  ['AI 유사 문제',     '✓',            '✓',            '✓',            '✓'],
-  ['AI 약점 분석',     '상세',          '상세',          '상세',         '상세'],
-  ['고급 분석 대시보드',   '✓',           '✓',            '✓',            '✓'],
-  ['다지점 통합',      '✓',            'X',            '✓',            '✓'],
-  ['스토리지',         '1GB',          '10GB',         '50GB',         '500GB'],
-  ['데이터 보관',      '30일',         '1년',          '3년',          '무제한'],
-]
 
 export default function PricingPage() {
   return (
     <>
       <LandingNav />
       <main>
-        <div className="bg-white">
-          {/* Hero */}
-          <section className="py-20 text-center px-6 bg-gray-50 border-b border-gray-200">
-            <ScrollReveal>
-              <h1 className="text-5xl md:text-6xl font-bold text-primary-900 mb-4">
-                학원 규모에 맞는<br />요금제를 선택하세요
-              </h1>
-              <p className="text-lg text-gray-600">
-                모든 플랜 14일 무료 체험 · 카드 등록 없음 · 언제든 변경 가능
-              </p>
-            </ScrollReveal>
-          </section>
+        <section className="px-5 pt-16 md:pt-24 pb-12 text-center">
+          <ScrollReveal>
+            <h1 className="text-[2.5rem] leading-[1.2] md:text-6xl md:leading-[1.15] font-extrabold tracking-tight text-gray-900 mb-5 whitespace-pre-line">
+              {PRICING.title}
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600">{PRICING.subtitle}</p>
+          </ScrollReveal>
+        </section>
 
-          {/* Plans */}
-          <section className="py-16 px-6">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                {PLANS.map((plan, i) => (
-                  <ScrollReveal key={plan.name} delay={i * 80}>
-                    <div
-                      className={`rounded-2xl border p-6 flex flex-col h-full relative ${
-                        plan.highlight
-                          ? 'border-primary-700 shadow-sm ring-1 ring-primary-700'
-                          : 'border-gray-200'
-                      }`}
-                    >
-                      {plan.badge && (
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                          <span className={`${plan.badgeColor ?? 'bg-primary-700'} text-white text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap`}>
-                            {plan.badge}
-                          </span>
-                        </div>
-                      )}
-
-                      <div className="mb-5">
-                        <div className="text-xs font-semibold text-gray-400 mb-0.5 uppercase tracking-wide">{plan.name}</div>
-                        <div className="text-xl font-bold text-gray-900 mb-1">{plan.nameKo}</div>
-                        <div className="text-sm text-gray-500 mb-3 leading-relaxed">{plan.target}</div>
-
-                        {plan.price ? (
-                          <>
-                            <div className="flex items-baseline gap-1 mb-0.5">
-                              <span className="text-3xl font-bold text-gray-900">
-                                {plan.price.toLocaleString()}원
-                              </span>
-                              <span className="text-sm text-gray-500">{plan.priceUnit}</span>
-                            </div>
-                            <div className="text-sm text-gray-500">{plan.priceDesc}</div>
-                            <div className="text-sm font-semibold text-primary-700 mt-0.5">{plan.priceNote}</div>
-                          </>
-                        ) : (
-                          <>
-                            <div className="text-3xl font-bold text-gray-900 mb-0.5">{plan.priceDesc}</div>
-                            <div className="text-sm text-gray-500">{plan.priceNote}</div>
-                          </>
-                        )}
-                      </div>
-
-                      <ul className="space-y-2.5 flex-1 mb-6">
-                        {plan.features.map((f) => (
-                          <li key={f.text} className="flex items-start gap-2 text-sm text-gray-700 leading-relaxed">
-                            <span className="text-accent-green font-bold flex-shrink-0 leading-5">✓</span>
-                            {f.text}
-                          </li>
-                        ))}
-                      </ul>
-
-                      <Link
-                        href={plan.ctaHref}
-                        className={`block text-center font-bold py-3 rounded-xl transition-colors text-base ${plan.ctaStyle}`}
-                      >
-                        {plan.cta}
-                      </Link>
+        {/* 플랜 카드 */}
+        <section className="px-5 pb-20">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {PRICING.plans.map((plan, i) => {
+              const isFree = plan.id === 'student'
+              return (
+                <ScrollReveal key={plan.id} delay={i * 80}>
+                  <div
+                    className={`relative rounded-[28px] p-7 flex flex-col h-full ${
+                      isFree
+                        ? 'bg-primary-700 text-white'
+                        : plan.highlight
+                          ? 'bg-white ring-2 ring-primary-700'
+                          : 'bg-gray-100'
+                    }`}
+                  >
+                    {plan.badge && (
+                      <span className="absolute top-6 right-6 bg-primary-100 text-primary-700 text-xs font-bold px-3 py-1 rounded-full">
+                        {plan.badge}
+                      </span>
+                    )}
+                    <div className={`text-xl font-extrabold mb-1 ${isFree ? 'text-white' : 'text-gray-900'}`}>
+                      {plan.name}
                     </div>
-                  </ScrollReveal>
-                ))}
-              </div>
-
-              <ScrollReveal>
-                <p className="text-center text-base text-gray-500 mt-8">
-                  더 많은 학생 또는 맞춤 계약이 필요하신가요?{' '}
-                  <Link href="/contact" className="text-primary-700 font-semibold hover:underline">
-                    도입 상담 →
-                  </Link>
-                </p>
-              </ScrollReveal>
-            </div>
-          </section>
-
-          {/* Feature comparison table */}
-          <section className="py-16 px-6 bg-gray-50">
-            <div className="max-w-5xl mx-auto">
-              <ScrollReveal>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-10">플랜별 기능 비교</h2>
-              </ScrollReveal>
-              <ScrollReveal>
-                <div className="overflow-x-auto">
-                  <table className="w-full bg-white rounded-2xl border border-gray-200 overflow-hidden text-sm">
-                    <thead>
-                      <tr className="bg-gray-50 border-b border-gray-200">
-                        <th className="text-left px-6 py-4 text-gray-500 font-semibold">기능</th>
-                        <th className="text-center px-4 py-4 text-gray-700 font-semibold">Free</th>
-                        <th className="text-center px-4 py-4 text-gray-700 font-semibold">Starter</th>
-                        <th className="text-center px-4 py-4 text-primary-700 font-semibold">Standard</th>
-                        <th className="text-center px-4 py-4 text-gray-700 font-semibold">Premium</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {COMPARE_ROWS.map(([feature, free, starter, std, prem], i) => (
-                        <tr key={feature} className={i % 2 === 0 ? '' : 'bg-gray-50/50'}>
-                          <td className="px-6 py-3 text-gray-700">{feature}</td>
-                          <td className="text-center px-4 py-3 text-gray-500 text-sm">{free}</td>
-                          <td className="text-center px-4 py-3 text-gray-700 text-sm">{starter}</td>
-                          <td className="text-center px-4 py-3 text-primary-700 font-medium text-sm">{std}</td>
-                          <td className="text-center px-4 py-3 text-gray-700 text-sm">{prem}</td>
-                        </tr>
+                    <div className={`text-sm mb-6 ${isFree ? 'text-white/75' : 'text-gray-500'}`}>{plan.target}</div>
+                    <div className="mb-6">
+                      <span className={`text-4xl font-extrabold ${isFree ? 'text-white' : 'text-gray-900'}`}>
+                        {plan.price}
+                      </span>
+                      {!isFree && <span className="text-base text-gray-500 ml-1">{PRICING.perMonth}</span>}
+                    </div>
+                    <ul className="space-y-2.5 flex-1 mb-8">
+                      {plan.features.map((f) => (
+                        <li
+                          key={f}
+                          className={`flex items-start gap-2 text-[15px] ${isFree ? 'text-white/90' : 'text-gray-700'}`}
+                        >
+                          <span className={isFree ? 'text-white' : 'text-primary-700'}>✓</span>
+                          {f}
+                        </li>
                       ))}
-                    </tbody>
-                  </table>
-                </div>
-              </ScrollReveal>
-            </div>
-          </section>
+                    </ul>
+                    <CtaButton
+                      href={plan.href}
+                      variant={isFree ? 'white' : plan.highlight ? 'primary' : 'outline'}
+                      size="md"
+                    >
+                      {plan.cta}
+                    </CtaButton>
+                  </div>
+                </ScrollReveal>
+              )
+            })}
+          </div>
+          <p className="text-center text-sm text-gray-400 mt-6">{PRICING.footnote}</p>
+        </section>
 
-          {/* FAQ */}
-          <section className="py-16 px-6">
-            <div className="max-w-3xl mx-auto">
-              <ScrollReveal>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-10">요금 관련 FAQ</h2>
-              </ScrollReveal>
-              <div className="space-y-4">
-                {FAQ_ITEMS.map((item, i) => (
-                  <ScrollReveal key={i} delay={i * 60}>
-                    <div className="border border-gray-200 rounded-xl p-6">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Q. {item.q}</h3>
-                      <p className="text-base text-gray-600 leading-relaxed">A. {item.a}</p>
-                    </div>
-                  </ScrollReveal>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* CTA */}
-          <section className="bg-gray-50 border-t border-gray-200 py-20 text-center px-6">
+        {/* 비교표 */}
+        <section className="px-5 py-20 bg-gray-50">
+          <div className="max-w-5xl mx-auto">
             <ScrollReveal>
-              <h2 className="text-4xl md:text-5xl font-bold text-primary-900 mb-4">지금 바로 시작하세요</h2>
-              <p className="text-lg text-gray-600 mb-8">카드 등록 없이 14일 무료 체험. 언제든 플랜을 변경할 수 있습니다.</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="https://login.wegoupenglish.com" className="bg-primary-700 text-white font-bold px-8 py-4 rounded-xl text-lg hover:bg-primary-800 transition-colors">
-                  14일 무료 체험 시작
-                </Link>
-                <Link href="/contact" className="border border-primary-700 text-primary-700 font-bold px-8 py-4 rounded-xl text-lg hover:bg-primary-50 transition-colors">
-                  도입 상담 받기
-                </Link>
+              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 text-center mb-10">
+                {PRICING.compareTitle}
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal>
+              <div className="bg-white rounded-[28px] overflow-x-auto">
+                <table className="w-full min-w-[560px] text-[15px]">
+                  <thead>
+                    <tr className="border-b border-gray-200">
+                      {PRICING.compareHeader.map((h, i) => (
+                        <th
+                          key={i}
+                          className={`py-5 px-4 font-bold ${i === 0 ? 'text-left' : 'text-center'} ${
+                            i === 1 ? 'text-primary-700' : 'text-gray-900'
+                          }`}
+                        >
+                          {h}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {PRICING.compareRows.map((row) => (
+                      <tr key={row[0]} className="border-b border-gray-100 last:border-0">
+                        {row.map((cell, i) => (
+                          <td
+                            key={i}
+                            className={`py-4 px-4 ${i === 0 ? 'text-left font-semibold text-gray-900' : 'text-center text-gray-600'}`}
+                          >
+                            {cell === '✓' ? <span className="text-primary-700 font-bold">✓</span> : cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </ScrollReveal>
-          </section>
-        </div>
+            <p className="text-center text-base text-gray-500 mt-10">
+              {PRICING.contactPrompt}{' '}
+              <Link href="/contact" className="text-primary-700 font-semibold hover:underline">
+                {PRICING.contactLink}
+              </Link>
+            </p>
+          </div>
+        </section>
       </main>
       <LandingFooter />
     </>

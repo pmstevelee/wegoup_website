@@ -3,110 +3,74 @@ import ScrollReveal from '@/components/landing/scroll-reveal'
 import ContactForm from '@/components/landing/contact-form'
 import LandingNav from '@/components/landing/nav'
 import LandingFooter from '@/components/landing/footer'
+import CtaButton from '@/components/landing/cta-button'
+import { APP_URL, CONTACT } from '@/content/copy'
 
 export const metadata: Metadata = {
-  title: '문의하기',
-  description: '위고업잉글리시 도입 상담 및 문의를 남겨주세요. 1영업일 내에 답변드립니다.',
+  title: CONTACT.metaTitle,
+  description: CONTACT.metaDescription,
 }
-
-const CONTACT_METHODS = [
-  {
-    title: '이메일',
-    desc: '평일 기준 1영업일 내 답변',
-    value: 'hello@wegupenglish.com',
-    link: 'mailto:hello@wegupenglish.com',
-  },
-  {
-    title: '카카오톡',
-    desc: '실시간 채팅 상담 가능',
-    value: '@위고업잉글리시',
-    link: 'https://open.kakao.com/',
-  },
-  {
-    title: '운영시간',
-    desc: '전화 상담 예약 가능',
-    value: '평일 09:00 – 18:00',
-    link: null,
-  },
-]
 
 export default function ContactPage() {
   return (
     <>
       <LandingNav />
-      <main><div className="bg-white">
-      {/* Hero */}
-      <section className="bg-gradient-to-b from-primary-50 to-white py-20 text-center px-6">
-        <ScrollReveal>
-          <h1 className="text-5xl md:text-6xl font-bold text-primary-900 mb-4">
-            도입 상담 & 문의
-          </h1>
-          <p className="text-lg text-gray-600 max-w-xl mx-auto">
-            궁금한 점이나 도입 관련 문의를 남겨주세요.
-            <br />
-            1영업일 내에 담당자가 연락드립니다.
-          </p>
-        </ScrollReveal>
-      </section>
+      <main>
+        <section className="px-5 pt-16 md:pt-24 pb-12 text-center">
+          <ScrollReveal>
+            <h1 className="text-[2.5rem] md:text-6xl font-extrabold tracking-tight text-gray-900 mb-5">
+              {CONTACT.title}
+            </h1>
+            <p className="text-lg text-gray-600">{CONTACT.subtitle}</p>
+          </ScrollReveal>
+        </section>
 
-      <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-12">
-          {/* Contact form */}
-          <div className="md:col-span-3">
-            <ScrollReveal>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">문의 남기기</h2>
-              <ContactForm />
-            </ScrollReveal>
-          </div>
+        <section className="px-5 pb-20">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
+            <div className="md:col-span-3">
+              <ScrollReveal>
+                <h2 className="text-2xl font-extrabold text-gray-900 mb-6">{CONTACT.formTitle}</h2>
+                <ContactForm />
+              </ScrollReveal>
+            </div>
 
-          {/* Contact info */}
-          <div className="md:col-span-2">
-            <ScrollReveal delay={100}>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">연락처</h2>
-              <div className="space-y-4 mb-8">
-                {CONTACT_METHODS.map((method) => (
-                  <div key={method.title} className="border border-gray-200 rounded-xl p-5">
-                    <div className="font-semibold text-gray-900 text-base mb-0.5">{method.title}</div>
-                    <div className="text-sm text-gray-500 mb-1.5">{method.desc}</div>
-                    {method.link ? (
-                      <a
-                        href={method.link}
-                        target={method.link.startsWith('http') ? '_blank' : undefined}
-                        rel={method.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="text-base font-medium text-primary-700 hover:underline"
-                      >
-                        {method.value}
-                      </a>
-                    ) : (
-                      <div className="text-base font-medium text-gray-700">{method.value}</div>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              {/* Quick CTA */}
-              <div className="bg-primary-50 rounded-xl p-5 border border-primary-100">
-                <div className="text-base font-semibold text-primary-900 mb-2">
-                  먼저 무료로 체험해보세요
+            <div className="md:col-span-2">
+              <ScrollReveal delay={100}>
+                <h2 className="text-2xl font-extrabold text-gray-900 mb-6">{CONTACT.infoTitle}</h2>
+                <div className="space-y-3 mb-6">
+                  {CONTACT.methods.map((method) => (
+                    <div key={method.title} className="bg-gray-100 rounded-[20px] p-5">
+                      <div className="font-bold text-gray-900 text-base mb-0.5">{method.title}</div>
+                      <div className="text-sm text-gray-500 mb-1.5">{method.desc}</div>
+                      {method.link ? (
+                        <a
+                          href={method.link}
+                          target={method.link.startsWith('http') ? '_blank' : undefined}
+                          rel={method.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          className="text-base font-semibold text-primary-700 hover:underline"
+                        >
+                          {method.value}
+                        </a>
+                      ) : (
+                        <div className="text-base font-semibold text-gray-700">{method.value}</div>
+                      )}
+                    </div>
+                  ))}
                 </div>
-                <p className="text-sm text-primary-700 leading-relaxed mb-4">
-                  14일 동안 모든 기능을 무료로 사용해보시고 결정하셔도 늦지 않습니다.
-                  카드 등록 없이 5분 안에 시작할 수 있습니다.
-                </p>
-                <a
-                  href="https://login.wegoupenglish.com"
-                  className="block text-center bg-primary-700 text-white text-base font-bold py-2.5 rounded-lg hover:bg-primary-800 transition-colors"
-                >
-                  무료 체험 시작하기
-                </a>
-              </div>
-            </ScrollReveal>
+
+                <div className="bg-primary-700 text-white rounded-[20px] p-6">
+                  <div className="text-lg font-bold mb-1">{CONTACT.quick.title}</div>
+                  <p className="text-sm text-white/80 mb-5">{CONTACT.quick.desc}</p>
+                  <CtaButton href={APP_URL} variant="white" size="md">
+                    {CONTACT.quick.cta}
+                  </CtaButton>
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
-    </main>
-    <LandingFooter />
-  </>
+        </section>
+      </main>
+      <LandingFooter />
+    </>
   )
 }
