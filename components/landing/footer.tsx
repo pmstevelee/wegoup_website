@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { FOOTER, NAV, SITE } from '@/content/copy'
+import SocialLinks from './social-links'
 
 const SUPPORT_LINKS = [
   { href: '/contact', label: '문의하기' },
@@ -15,6 +16,9 @@ export default function LandingFooter() {
           <div>
             <div className="text-xl font-extrabold text-primary-700 mb-3">{SITE.name}</div>
             <p className="text-[15px] leading-relaxed whitespace-pre-line">{FOOTER.intro}</p>
+            <div className="mt-5">
+              <SocialLinks />
+            </div>
           </div>
 
           <div>

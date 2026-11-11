@@ -7,6 +7,13 @@
 
 export const APP_URL = 'https://login.wegoupenglish.com'
 
+/** 위고업잉글리시 SNS (푸터 아이콘, 새 창으로 열림) */
+export const SOCIAL = [
+  { id: 'youtube', label: '유튜브', href: 'https://www.youtube.com/@wegoupenglishcom' },
+  { id: 'threads', label: '쓰레드', href: 'https://www.threads.com/@pm.stevelee2' },
+  { id: 'instagram', label: '인스타그램', href: 'https://www.instagram.com/pm.stevelee2/' },
+] as const
+
 /* ── 공통 ─────────────────────────────────────────────── */
 export const SITE = {
   name: '위고업잉글리시',
