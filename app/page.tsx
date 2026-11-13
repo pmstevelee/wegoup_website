@@ -99,9 +99,9 @@ export default function Home() {
             </ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
               {HOME.pain.items.map((item, i) => (
-                <ScrollReveal key={item.text} delay={i * 100}>
+                <ScrollReveal key={item.mark} delay={i * 100}>
                   <div className="bg-white rounded-[28px] px-6 py-9 h-full">
-                    <div className="text-5xl mb-5">{item.emoji}</div>
+                    <div className="text-3xl font-extrabold text-primary-700 mb-5 tracking-tight">{item.mark}</div>
                     <p className="text-lg font-semibold text-gray-800 leading-relaxed whitespace-pre-line">
                       {item.text}
                     </p>
@@ -174,7 +174,7 @@ export default function Home() {
             <ScrollReveal>
               <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                 <div className="md:col-span-3 bg-primary-700 text-white rounded-[28px] p-8">
-                  <div className="text-lg font-bold mb-5">✅ {HOME.free.freeTitle}</div>
+                  <div className="text-lg font-bold mb-5">{HOME.free.freeTitle}</div>
                   <ul className="grid grid-cols-2 gap-3">
                     {HOME.free.freeItems.map((item) => (
                       <li key={item} className="bg-white/15 rounded-2xl px-4 py-3 text-base font-semibold">
@@ -184,7 +184,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <div className="md:col-span-2 bg-gray-100 rounded-[28px] p-8">
-                  <div className="text-lg font-bold text-gray-900 mb-5">✨ {HOME.free.aiTitle}</div>
+                  <div className="text-lg font-bold text-gray-900 mb-5">{HOME.free.aiTitle}</div>
                   <ul className="space-y-3">
                     {HOME.free.aiItems.map((item) => (
                       <li key={item} className="bg-white rounded-2xl px-4 py-3 text-base font-semibold text-gray-700">

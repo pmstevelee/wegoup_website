@@ -51,12 +51,12 @@ export default function PrivacyPage() {
         {/* 요약 카드 */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           {[
-            { icon: '🔒', title: '최소 수집', desc: '서비스에 필요한 최소한의 정보만 수집합니다.' },
-            { icon: '🚫', title: '제3자 미제공', desc: '법령에 따른 경우 외 외부 제공 없음' },
-            { icon: '🗑️', title: '완전 삭제', desc: '탈퇴 시 모든 데이터를 완전히 삭제합니다.' },
+            { icon: '01', title: '최소 수집', desc: '서비스에 필요한 최소한의 정보만 수집합니다.' },
+            { icon: '02', title: '제3자 미제공', desc: '법령에 따른 경우 외 외부 제공 없음' },
+            { icon: '03', title: '완전 삭제', desc: '탈퇴 시 모든 데이터를 완전히 삭제합니다.' },
           ].map((item) => (
             <div key={item.title} className="border border-gray-200 rounded-xl p-4 text-center">
-              <div className="text-2xl mb-2">{item.icon}</div>
+              <div className="text-xl font-extrabold text-primary-700 mb-2">{item.icon}</div>
               <div className="font-semibold text-gray-900 text-sm mb-1">{item.title}</div>
               <div className="text-xs text-gray-500">{item.desc}</div>
             </div>
