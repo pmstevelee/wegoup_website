@@ -31,7 +31,7 @@ export default function ContactForm() {
   if (state === 'sent') {
     return (
       <div className="text-center py-16 border border-gray-200 rounded-2xl">
-        <div className="text-5xl mb-4">🎉</div>
+        <div className="text-4xl font-extrabold text-primary-700 mb-4">✓</div>
         <h3 className="text-xl font-bold text-gray-900 mb-2">문의가 접수되었습니다</h3>
         <p className="text-gray-600 text-sm">
           1영업일 내에 입력하신 이메일로 답변드리겠습니다.

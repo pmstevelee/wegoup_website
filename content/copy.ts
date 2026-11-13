@@ -70,15 +70,15 @@ export const HOME = {
     grammarQuestion: 'She ___ to school every day.',
     grammarOptions: ['go', 'goes', 'going'],
     grammarAnswer: 'goes',
-    streak: '🔥 7일 연속 학습',
+    streak: '★ 7일 연속 학습',
   },
 
   pain: {
     title: '혹시 이런 적 있나요?',
     items: [
-      { emoji: '😩', text: '단어 100개 외웠는데,\n일주일 뒤엔 10개만 기억난다' },
-      { emoji: '🤯', text: '문법 설명은 알겠는데,\n문제만 보면 헷갈린다' },
-      { emoji: '😴', text: '뭘 공부해야 할지 몰라서\n그냥 책만 펼쳐 둔다' },
+      { mark: '“01”', text: '단어 100개 외웠는데,\n일주일 뒤엔 10개만 기억난다' },
+      { mark: '“02”', text: '문법 설명은 알겠는데,\n문제만 보면 헷갈린다' },
+      { mark: '“03”', text: '뭘 공부해야 할지 몰라서\n그냥 책만 펼쳐 둔다' },
     ],
     answer: '위고업잉글리시가 무엇을, 얼마나 해야 할지 정해줍니다.',
   },
@@ -116,9 +116,9 @@ export const HOME = {
 
   free: {
     title: '학생이라면 이만큼 무료예요',
-    freeTitle: '무료',
+    freeTitle: '✓ 무료',
     freeItems: ['레벨 테스트', '문법 문제', '단어 학습', '오답 복습', 'XP · 배지', '학습 기록'],
-    aiTitle: 'AI 기능 (학원 플랜)',
+    aiTitle: '＋ AI 기능 (학원 플랜)',
     aiItems: ['AI 플래시카드 자동 생성', 'AI 맞춤 문제 생성', 'AI 쓰기 피드백'],
     note: 'AI 기능은 다니는 학원이 위고업잉글리시를 쓰면 함께 쓸 수 있어요.',
   },

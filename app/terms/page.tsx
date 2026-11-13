@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: '위고업잉글리시 서비스 이용약관을 확인하세요.',
 }
 
-const LAST_UPDATED = '2026년 5월 1일'
+const LAST_UPDATED = '2026년 10월 28일'
 const EFFECTIVE_DATE = '2026년 5월 1일'
 
 interface SectionProps {
@@ -112,7 +112,6 @@ export default function TermsPage() {
         <Section num="6" title="구독 및 요금">
           <ol className="list-decimal list-inside space-y-2 pl-2">
             <li>서비스는 선불 구독 방식으로 운영되며, 요금 및 구독 조건은 서비스 내 요금제 페이지에 명시됩니다.</li>
-            <li>신규 학원장은 결제 정보 없이 14일 무료 체험을 이용할 수 있습니다. 체험 기간 종료 후 자동 결제되지 않으며, 별도로 구독을 선택해야 합니다.</li>
             <li>현재 결제 방식은 계좌 이체(수동 입금 확인)로 운영됩니다. 구독 신청 후 관리자의 입금 확인 후 서비스가 활성화됩니다.</li>
             <li>구독 기간 중 플랜 업그레이드는 즉시 적용되며, 남은 기간에 비례하여 추가 요금이 청구됩니다.</li>
             <li>구독료는 부가가치세가 포함된 금액으로 표시됩니다.</li>
@@ -123,7 +122,6 @@ export default function TermsPage() {
           <ol className="list-decimal list-inside space-y-2 pl-2">
             <li>결제일로부터 <strong>7일 이내</strong>에 서비스를 이용하지 않은 경우 전액 환불이 가능합니다.</li>
             <li>결제일로부터 7일 초과 시, 남은 구독 기간에 해당하는 금액에서 위약금 10%를 공제한 금액을 환불합니다.</li>
-            <li>무료 체험 기간 내 발생한 이용료는 별도 청구되지 않으며, 환불 대상이 아닙니다.</li>
             <li>다음 각 호의 경우 환불이 제한될 수 있습니다.
               <ul className="list-disc list-inside space-y-1 pl-4 mt-2">
                 <li>약관 위반으로 인해 회사가 계약을 해지한 경우</li>
