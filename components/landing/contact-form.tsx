@@ -148,7 +148,7 @@ export default function ContactForm() {
         <label htmlFor="privacy" className="text-xs text-gray-500 leading-relaxed">
           개인정보 수집 및 이용에 동의합니다. 수집된 정보는 도입 상담 목적으로만 사용되며,
           상담 완료 후 1년 이내 삭제됩니다.{' '}
-          <a href="/privacy" className="text-primary-700 hover:underline">개인정보처리방침</a>
+          <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-primary-700 hover:underline">개인정보처리방침</a>
         </label>
       </div>
 

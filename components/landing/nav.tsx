@@ -41,12 +41,16 @@ export default function LandingNav() {
           <div className="hidden md:flex items-center gap-2">
             <a
               href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[15px] font-medium text-gray-600 hover:text-gray-900 transition-colors px-4 py-2"
             >
               {NAV.login}
             </a>
             <a
               href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-primary-700 text-white text-[15px] font-bold px-5 py-2.5 rounded-full hover:bg-primary-800 transition-colors"
             >
               {NAV.cta}
@@ -76,11 +80,18 @@ export default function LandingNav() {
               </Link>
             ))}
             <hr className="my-2 border-gray-100" />
-            <a href={APP_URL} className="text-base font-medium text-gray-700 px-2 py-3">
+            <a
+              href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-base font-medium text-gray-700 px-2 py-3"
+            >
               {NAV.login}
             </a>
             <a
               href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-primary-700 text-white text-base font-bold px-5 py-3 rounded-full text-center mt-1 hover:bg-primary-800 transition-colors"
             >
               {NAV.cta}

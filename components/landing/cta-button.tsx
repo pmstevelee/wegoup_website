@@ -23,7 +23,7 @@ export default function CtaButton({ href, children, variant = 'primary', size = 
   const className = `inline-flex items-center justify-center rounded-full font-bold transition-colors ${VARIANTS[variant]} ${SIZES[size]}`
   if (href.startsWith('http')) {
     return (
-      <a href={href} className={className}>
+      <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
         {children}
       </a>
     )
